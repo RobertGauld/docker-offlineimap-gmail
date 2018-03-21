@@ -6,7 +6,7 @@ CURRENT=$( date +%Y%m%d-%H%M )
 
 # Copy lastest backup if exists, otherwise create empty directory
 if [ ! -z $LATEST ]; then
-	cp -l /media/destination/$LATEST /media/destination/$CURRENT
+	cp -al /media/destination/$LATEST /media/destination/$CURRENT
 else
 	mkdir /media/destination/$CURRENT
 fi
