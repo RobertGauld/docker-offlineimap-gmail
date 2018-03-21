@@ -5,28 +5,11 @@ accounts = GMail
 [Account GMail]
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
-# You can have offlineimap continue running indefinitely, automatically
-# syncing your mail periodically.  If you want that, specify how
-# frequently to do that (in minutes) here.  You can also specify
-# fractional minutes (ie, 3.25).
-autorefresh = 60
-
-# OfflineImap can replace a number of full updates by quick
-# synchronizations.  It only synchronizes a folder if 1) a Maildir
-# folder has changed, or 2) if an IMAP folder has received new messages
-# or had messages deleted, ie it does not update if only IMAP flags have
-# changed.  Full updates need to fetch ALL flags for all messages, so
-# this makes quite a performance difference (especially if syncing
-# between two IMAP servers).
-# Specify 0 for never, -1 for always (works even in non-autorefresh
-# mode), or a positive integer <n> to do <n> quick updates before doing
-# another full synchronization (requires autorefresh).  Updates are
-# always performed after <autorefresh> minutes, be they quick or full.
-quick = 23
 
 # OfflineImap caches the state of the synchronisation to e.g. be able to
 # determine if a mail has been deleted on one side or added on the
 # other.
+#
 # The default and historical backend is 'plain' which writes out the
 # state in plain text files. On Repositories with large numbers of
 # mails, the performance might not be optimal, as we write out the
@@ -65,13 +48,14 @@ maxconnections = 3
 
 [Repository Gmail-Local]
 type = Maildir
-localfolders = /media/destination
+localfolders = GENERATED_DESTINATION
 sep = .
 
 [Repository Gmail-Remote]
 type = Gmail
 remoteuser = YOUR_EMAIL_ADDRESS
 remotepass = YOUR_PASSWORD
+auth_mechanisms = CRAM-MD5, PLAIN, LOGIN
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 keepalive = 60 
 readonly = true

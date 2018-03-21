@@ -1,14 +1,12 @@
 # offlineimap-gmail
-Use offlineimap to make a backup copy of a gmail/google apps email account.
+Use offlineimap to make a backup copies of a gmail/google apps email account.
+Each backup is in a directory named in the form yyyymmdd-hhmm, before the sync is started the directory is created by creating hardlinks pointing to the latest existing backup in order to achieve deduplication.
 
 
 ## To use:
 1. Set the following environment variables:
-  * YOUR_EMAIL_ADDRESS
-  * YOUR_PASSWORD
+  * EMAIL
+  * PASSWORD
 2. Connect the following to the mount points:
   * /media/destination - the folder to store the backups in
-3. Either
-  * Run the container and it will perform a full backup every 24 hours (with a quick update every hour).
-  * Run the container using /root/one-shot.sh as the entry point to do a one time sync.
 
