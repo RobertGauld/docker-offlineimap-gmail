@@ -1,5 +1,5 @@
 [general]
-ui = basic
+ui = quiet
 accounts = GMail
 
 [Account GMail]
