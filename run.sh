@@ -5,7 +5,7 @@ LATEST=$( ls -1d /media/destination/*/ 2> /dev/null | tail -1 | sed 's/[^0-9\-]/
 CURRENT=$( date +%Y%m%d-%H%M )
 
 # Copy lastest backup if exists, otherwise create empty directory
-if [ ! -z $LATEST ]; then
+if [ -e $LATEST ]; then
 	cp -al /media/destination/$LATEST /media/destination/$CURRENT
 else
 	mkdir /media/destination/$CURRENT
