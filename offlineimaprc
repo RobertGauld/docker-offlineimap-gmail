@@ -42,10 +42,6 @@ status_backend = plain
 # mail.
 # maxage = 365
 
-#Controls how many accounts may be synchronized simultaneously
-maxsyncaccounts = 3 
-maxconnections = 3 
-
 [Repository Gmail-Local]
 type = Maildir
 localfolders = GENERATED_DESTINATION
