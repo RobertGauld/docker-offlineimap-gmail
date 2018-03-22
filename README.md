@@ -10,7 +10,9 @@ Each backup is in a directory named in the form yyyymmdd-hhmm, before the sync i
 2. Connect the following to the mount points:
   * /media/destination - the folder to store the backups in
 
-## Example shell command (replace the stuff in all capitals starting YOUR_):
+## Example shell commands (replace the stuff in all capitals starting YOUR_):
 ```
-docker run --rm --volume="YOUR_PATH_FOR_BACKUPS:/media/destination"  --env="EMAIL=YOUR_EMAIL_ADDRESS" --env="PASSWORD=YOUR_PASSWORD" robertgauld/offlineimap-gmail:latest
+docker run --rm --volume="YOUR_PATH_FOR_BACKUPS:/media/destination" --env="EMAIL=YOUR_EMAIL_ADDRESS" --env="PASSWORD=YOUR_PASSWORD" robertgauld/offlineimap-gmail:latest
+
+docker run --rm --volume="YOUR_PATH_FOR_BACKUPS:/media/destination" --env-file="ENV-FILE" robertgauld/offlineimap-gmail:latest
 ```
