@@ -1,8 +1,8 @@
 [general]
 ui = quiet
-accounts = GMail
+accounts = Gmail
 
-[Account GMail]
+[Account Gmail]
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
 
